@@ -2,10 +2,17 @@
 
 import { useState } from "react";
 
-const DEEPLINK_URL =
-  "cursor://anysphere.cursor-deeplink/prompt?text=Open%20CursorToys%20in%20your%20workspace";
+const DEEPLINK_URL = "cursor:extension/godrix.cursor-toys";
 
-export function DeeplinkButton() {
+interface DeeplinkButtonProps {
+  label?: string;
+  centered?: boolean;
+}
+
+export function DeeplinkButton({
+  label = "Open in Cursor",
+  centered = false,
+}: DeeplinkButtonProps) {
   const [showHint, setShowHint] = useState(false);
 
   const handleClick = () => {
@@ -18,9 +25,9 @@ export function DeeplinkButton() {
   };
 
   return (
-    <div>
+    <div style={centered ? { textAlign: "center" } : undefined}>
       <button type="button" className="button button-primary" onClick={handleClick}>
-        Open in Cursor via Deeplink
+        {label}
       </button>
       {showHint ? (
         <p className="muted" style={{ marginTop: "0.55rem" }}>

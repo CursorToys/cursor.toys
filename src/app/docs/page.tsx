@@ -1,5 +1,5 @@
-import { DeeplinkButton } from "@/components/DeeplinkButton";
 import { Footer } from "@/components/Footer";
+import { InstallCursorCard } from "@/components/InstallCursorCard";
 import { TopNav } from "@/components/TopNav";
 
 export default function DocsPage() {
@@ -9,90 +9,100 @@ export default function DocsPage() {
       <main className="container section">
         <h1 style={{ maxWidth: "20ch" }}>Quick start docs</h1>
         <p className="hero-copy" style={{ marginTop: "1rem" }}>
-          Install CursorToys, configure your workspace, and run your first full sharing plus testing workflow in a few
-          minutes.
+          Setup based on the official CursorToys extension docs. Follow these steps to install, configure essentials,
+          and run your first practical workflow with sharing and HTTP validation.
         </p>
 
         <div className="split">
           <article className="panel">
             <h3>1. Install</h3>
             <ul className="list" style={{ marginTop: "0.8rem" }}>
-              <li>Install from VS Code Marketplace or Open VSX.</li>
-              <li>Open Command Palette and search for CursorToys commands.</li>
-              <li>Run the menu command to verify the extension is active.</li>
+              <li>Install from VS Code Marketplace, Open VSX, or local VSIX package.</li>
+              <li>Open Command Palette and run `CursorToys: Show Menu`.</li>
+              <li>Confirm Explorer views appear: Notepads, Commands, Prompts, Plans, Skills, Hooks, and MCPB.</li>
             </ul>
           </article>
           <article className="panel">
-            <h3>2. Import first asset</h3>
+            <h3>2. Configure base settings</h3>
             <ul className="list" style={{ marginTop: "0.8rem" }}>
-              <li>Use Import from Link for deeplink, compressed bundle, or gist URL.</li>
-              <li>Choose personal or project location when prompted.</li>
-              <li>Open imported files and validate content before sharing forward.</li>
+              <li>Pick link behavior with `cursorToys.linkType` (deeplink, web, or custom).</li>
+              <li>Set folder strategy with `cursorToys.baseFolder` and `cursorToys.commandsFolder`.</li>
+              <li>Optionally adjust `cursorToys.allowedExtensions` and HTTP timeout defaults.</li>
             </ul>
           </article>
         </div>
 
-        <section className="section" style={{ paddingBottom: "0" }}>
-          <h2>Core configuration</h2>
-          <div className="split">
-            <article className="panel">
-              <h3>Recommended settings</h3>
-              <ul className="list" style={{ marginTop: "0.8rem" }}>
-                <li>Choose preferred link type for sharing output.</li>
-                <li>Set allowed file extensions for command and prompt flows.</li>
-                <li>Define base folder strategy for commands, rules, prompts, and HTTP files.</li>
-              </ul>
-            </article>
-            <article className="panel">
-              <h3>Deeplink format</h3>
-            <ul className="list" style={{ marginTop: "0.8rem" }}>
-              <li>Base protocol: cursor://anysphere.cursor-deeplink/...</li>
-              <li>Supported kinds include command, rule, skill, and prompt links.</li>
-              <li>Browsers may ask permission before opening custom protocols.</li>
-            </ul>
-          </article>
-        </div>
+        <section className="section" style={{ paddingBottom: "0", textAlign: "center" }}>
+          <h2>Install CursorToys</h2>
+          <p className="hero-copy" style={{ margin: "0.8rem auto 0" }}>
+            Use the deeplink button below to open Cursor and install using your package route.
+          </p>
+          <div className="install-card-wrap" style={{ marginTop: "1.3rem" }}>
+            <InstallCursorCard />
+          </div>
         </section>
 
         <section className="section" style={{ paddingBottom: "0" }}>
-          <h2>Troubleshooting</h2>
+          <h2>3. First productive flow (recommended)</h2>
           <div className="split">
             <article className="panel">
-              <h3>Import issues</h3>
+              <h3>Share and import assets</h3>
               <ul className="list" style={{ marginTop: "0.8rem" }}>
-                <li>Confirm the link includes a valid Cursor or shareable format.</li>
-                <li>Check if selected destination folder is writable.</li>
-                <li>Retry with a shorter payload if URL length is too large.</li>
+                <li>Create a command or prompt file in your configured `.cursor`, `.claude`, `.vscode`, or `.ai` path.</li>
+                <li>Use share commands to generate deeplink, CursorToys bundle, or GitHub Gist.</li>
+                <li>Use `CursorToys: Import` (`Ctrl/Cmd+Shift+I`) to validate import on a clean location.</li>
               </ul>
             </article>
             <article className="panel">
-              <h3>Deeplink issues</h3>
+              <h3>Run HTTP with assertions</h3>
               <ul className="list" style={{ marginTop: "0.8rem" }}>
-                <li>Allow custom protocol prompts in your browser.</li>
-                <li>Ensure Cursor is installed and registered for deeplink protocol handling.</li>
-                <li>Fallback to web links or import commands when needed.</li>
+                <li>Create `.req` or `.request` files under your HTTP folder.</li>
+                <li>Add `@assert()` annotations to validate response contracts and behavior.</li>
+                <li>Run request and review inline assertion results plus response output.</li>
               </ul>
             </article>
           </div>
         </section>
 
         <section className="section" style={{ paddingBottom: "0" }}>
-          <h2>Best practices</h2>
+          <h2>4. Optional modules to enable</h2>
           <div className="split">
             <article className="panel">
-              <h3>For teams</h3>
+              <h3>MCPB and productivity tools</h3>
               <ul className="list" style={{ marginTop: "0.8rem" }}>
-                <li>Version shared bundles by project milestone.</li>
-                <li>Document prompt and command intent in file headers.</li>
-                <li>Use project-specific folders for reproducible collaboration.</li>
+                <li>Install `.mcpb` packages from Command Palette and edit env vars in preview.</li>
+                <li>Enable AI text refinement with Gemini key configuration.</li>
+                <li>Use minify commands for files and clipboard when sharing payloads.</li>
               </ul>
             </article>
             <article className="panel">
-              <h3>For personal workflows</h3>
+              <h3>Remote and spending</h3>
               <ul className="list" style={{ marginTop: "0.8rem" }}>
-                <li>Keep a small set of high-value commands and prompts.</li>
-                <li>Use tree views to clean stale assets weekly.</li>
-                <li>Save reusable API checks as request and assertion templates.</li>
+                <li>Configure CursorToys Remote Chat for Telegram-driven workflows.</li>
+                <li>Use spending commands to track Auto/API usage from the status bar.</li>
+                <li>Tune refresh and token options in `cursorToys.spending.*` settings.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section className="section" style={{ paddingBottom: "0" }}>
+          <h2>Troubleshooting</h2>
+          <div className="split">
+            <article className="panel">
+              <h3>Import and sharing issues</h3>
+              <ul className="list" style={{ marginTop: "0.8rem" }}>
+                <li>Confirm link type matches your configured output (`deeplink`, `web`, or `custom`).</li>
+                <li>Verify destination folders are writable and extension type is allowed.</li>
+                <li>If URL payload is too large, share as CursorToys bundle or GitHub Gist.</li>
+              </ul>
+            </article>
+            <article className="panel">
+              <h3>HTTP and deeplink issues</h3>
+              <ul className="list" style={{ marginTop: "0.8rem" }}>
+                <li>Check selected environment and unresolved variables in request files.</li>
+                <li>Confirm `cursorToys.httpAssertionsEnabled` is active when tests do not run.</li>
+                <li>Allow browser custom-protocol prompts for Cursor deeplinks.</li>
               </ul>
             </article>
           </div>
@@ -101,10 +111,10 @@ export default function DocsPage() {
         <section className="section" style={{ paddingBottom: "0" }}>
           <h2>Launch test deeplink</h2>
           <p className="hero-copy" style={{ marginTop: "0.8rem" }}>
-            Use the button below to test whether your browser can hand custom protocol links to Cursor.
+            Use the button below to verify your browser can hand `cursor:` protocol links to the editor.
           </p>
-          <div className="hero-actions" style={{ marginTop: "1.3rem" }}>
-            <DeeplinkButton />
+          <div className="hero-actions" style={{ marginTop: "1.3rem", justifyContent: "center" }}>
+            <InstallCursorCard />
             <a
               className="button button-secondary"
               href="https://marketplace.visualstudio.com/items?itemName=Godrix.cursor-toys"

@@ -1,5 +1,5 @@
+import { InstallCursorCard } from "@/components/InstallCursorCard";
 import Link from "next/link";
-import { DeeplinkButton } from "@/components/DeeplinkButton";
 import { Footer } from "@/components/Footer";
 import { TopNav } from "@/components/TopNav";
 
@@ -9,16 +9,16 @@ export default function Home() {
       <TopNav />
       <main>
         <section className="section hero container">
-          <span className="eyebrow fade-up">For teams building in Cursor</span>
-          <h1 className="fade-up fade-delay-1">One extension for your Cursor workflow.</h1>
+          <span className="eyebrow fade-up">For developers building in Cursor</span>
+          <h1 className="fade-up fade-delay-1">Your DX layer for Cursor.</h1>
           <p className="hero-copy fade-up fade-delay-2">
-            Share commands instantly, test APIs in-editor, and manage prompts, skills, and plans in one place.
+            Share commands instantly, test APIs in-editor, and manage prompts, skills, and plans in one place. Built
+            first for individual developer experience, with team workflows when you need them.
           </p>
-          <div className="hero-actions fade-up fade-delay-2">
-            <DeeplinkButton />
-            <Link className="button button-secondary" href="/docs">
-              Quick start docs
-            </Link>
+          <div className="install-spotlight fade-up fade-delay-2">
+            <div className="install-card-wrap">
+              <InstallCursorCard />
+            </div>
           </div>
           <div className="panel-grid">
             <article className="panel fade-up">
@@ -59,7 +59,7 @@ export default function Home() {
         </section>
 
         <section className="section container" id="how-it-works">
-          <h2>How teams run CursorToys</h2>
+          <h2>How devs run CursorToys</h2>
           <div className="split">
             <article className="panel">
               <h3>Collaborative setup</h3>

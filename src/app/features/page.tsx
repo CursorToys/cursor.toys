@@ -7,96 +7,96 @@ export default function FeaturesPage() {
     <div className="site-shell">
       <TopNav />
       <main className="container section">
-        <h1 style={{ maxWidth: "22ch" }}>CursorToys features, grouped by real workflows.</h1>
+        <h1 style={{ maxWidth: "22ch" }}>CursorToys features mapped to real extension capabilities.</h1>
         <p className="hero-copy" style={{ marginTop: "1rem" }}>
-          CursorToys is designed to help teams standardize how they share context, test integrations, and execute
-          repeatable AI-assisted workflows inside Cursor.
+          This page mirrors the extension documentation and package contribution surface, so each section below maps to
+          commands, views, or settings that exist in CursorToys today.
         </p>
 
         <section className="feature-grid" style={{ marginTop: "2rem" }}>
           <article className="feature-card">
-            <h3>Sharing engine</h3>
+            <h3>Instant sharing and import</h3>
             <p>
-              Generate deeplinks for commands, rules, prompts, and skills. Share as compressed bundles or GitHub Gist
-              when teams need portable setup across repositories.
+              Generate deeplinks and CursorToys bundles for commands, rules, prompts, skills, plans, notepads, hooks,
+              HTTP requests, and full folders. Import from deeplink, web URL, bundle, or GitHub Gist.
             </p>
           </article>
           <article className="feature-card">
-            <h3>HTTP workbench</h3>
+            <h3>HTTP workbench with assertions</h3>
             <p>
-              Run API requests in-editor with environments, helper variables, and assertions to validate status,
-              headers, response body paths, and execution timing.
+              Execute requests from `.req` and `.request` files, switch environments, use helper variables, and run
+              `@assert()` tests with operators for status, headers, body paths, and validation rules.
             </p>
           </article>
           <article className="feature-card">
-            <h3>Personal libraries</h3>
+            <h3>Explorer libraries</h3>
             <p>
-              Organize commands, prompts, hooks, plans, notepads, and skills through dedicated tree views built for
-              discoverability and quick edits.
+              Manage Notepads, Commands, Prompts, Cursor Plans, Skills, Hooks, and MCPB Packages from dedicated
+              Explorer views with open, rename, reveal, delete, refresh, and share actions.
             </p>
           </article>
           <article className="feature-card">
             <h3>AI accelerators</h3>
             <p>
-              Refine technical text, process content with reusable prompts, and send context to chat quickly to reduce
-              copy and paste overhead.
+              Refine selection or clipboard with Gemini, process text with custom prompts, and send text or selection
+              to chat through commands and context menu actions.
             </p>
           </article>
           <article className="feature-card">
-            <h3>MCPB handling</h3>
+            <h3>MCPB package operations</h3>
             <p>
-              Install and preview MCP bundles with environment awareness, then manage package lifecycle from focused
-              side-panel actions.
+              Install `.mcpb` bundles with preview, edit environment variables before saving, and manage installed
+              packages directly from the MCPB Explorer tree.
             </p>
           </article>
           <article className="feature-card">
-            <h3>Remote workflows</h3>
+            <h3>Remote and usage operations</h3>
             <p>
-              Connect remote workflows with Telegram controls and collaboration paths when local editor access is not
-              enough.
+              Run CursorToys Remote Chat controls (start, pause, configure, send summary) and monitor Cursor spending
+              usage from status bar commands.
             </p>
           </article>
         </section>
 
         <section className="section" style={{ paddingBottom: "0" }}>
-          <h2>Feature breakdown</h2>
+          <h2>Core categories from the extension docs</h2>
           <div className="split">
             <article className="panel">
-              <h3>Collaboration and sharing</h3>
+              <h3>Authoring and distribution</h3>
               <ul className="list" style={{ marginTop: "0.8rem" }}>
-                <li>Share single files or entire folders as reusable bundles.</li>
-                <li>Support deeplink, web URL, compressed format, and gist delivery.</li>
-                <li>Import flows optimized for both personal and project destinations.</li>
+                <li>Generate deeplink or web links for commands, rules, prompts, and chat prompts.</li>
+                <li>Share as CursorToys bundle for single files, folders, or project-level payloads.</li>
+                <li>Import through Command Palette shortcut and route to workspace or personal libraries.</li>
               </ul>
             </article>
             <article className="panel">
-              <h3>API development workflow</h3>
+              <h3>Validation and execution</h3>
               <ul className="list" style={{ marginTop: "0.8rem" }}>
-                <li>Run requests without leaving Cursor.</li>
-                <li>Use assertions to gate correctness before sharing changes.</li>
-                <li>Keep environment definitions near request files for consistency.</li>
+                <li>Execute HTTP requests in-editor with timeout and save/preview behavior.</li>
+                <li>Validate response behavior with assertions and inline pass/fail output.</li>
+                <li>Switch environments and use helper functions for dynamic request values.</li>
               </ul>
             </article>
           </div>
         </section>
 
         <section className="section" style={{ paddingBottom: "0" }}>
-          <h2>Example team workflows</h2>
+          <h2>Typical workflows</h2>
           <div className="split">
             <article className="panel">
-              <h3>Onboarding a new engineer</h3>
+              <h3>Bootstrap a new project</h3>
               <ul className="list" style={{ marginTop: "0.8rem" }}>
-                <li>Share a starter command and prompt bundle via one link.</li>
-                <li>Import team HTTP requests and environment templates.</li>
-                <li>Pin core skills and plans in personal libraries.</li>
+                <li>Create starter command, prompt, and rules bundles from repository folders.</li>
+                <li>Import team HTTP requests with environment files and assertion templates.</li>
+                <li>Add core skills and plans to keep onboarding steps reproducible.</li>
               </ul>
             </article>
             <article className="panel">
-              <h3>Shipping an integration</h3>
+              <h3>Ship and communicate a release</h3>
               <ul className="list" style={{ marginTop: "0.8rem" }}>
-                <li>Create request suites and assertion checks in-editor.</li>
-                <li>Refine release notes with AI before publishing.</li>
-                <li>Share final workflow bundle with the full team.</li>
+                <li>Run HTTP request suites and assertions before publishing changes.</li>
+                <li>Refine release notes and prompts with AI processing commands.</li>
+                <li>Share final assets via bundle, gist, or deeplink for the full team.</li>
               </ul>
             </article>
           </div>
