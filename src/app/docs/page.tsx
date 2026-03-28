@@ -17,7 +17,7 @@ export default function DocsPage() {
           <article className="panel">
             <h3>1. Install</h3>
             <ul className="list" style={{ marginTop: "0.8rem" }}>
-              <li>Install from VS Code Marketplace, Open VSX, or local VSIX package.</li>
+              <li>Install from Open VSX or a local VSIX package.</li>
               <li>Open Command Palette and run `CursorToys: Show Menu`.</li>
               <li>Confirm Explorer views appear: Notepads, Commands, Prompts, Plans, Skills, Hooks, and MCPB.</li>
             </ul>
@@ -117,11 +117,11 @@ export default function DocsPage() {
             <InstallCursorCard />
             <a
               className="button button-secondary"
-              href="https://marketplace.visualstudio.com/items?itemName=Godrix.cursor-toys"
+              href="https://open-vsx.org/extension/godrix/cursor-toys"
               target="_blank"
               rel="noreferrer"
             >
-              Extension listing
+              Open VSX listing
             </a>
           </div>
         </section>

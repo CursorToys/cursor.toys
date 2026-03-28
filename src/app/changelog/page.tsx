@@ -1,24 +1,35 @@
 import { Footer } from "@/components/Footer";
 import { TopNav } from "@/components/TopNav";
+import ReactMarkdown from "react-markdown";
 
-export default function ChangelogPage() {
+const CHANGELOG_RAW_URL = "https://raw.githubusercontent.com/CursorToys/cursor-toys/main/CHANGELOG.md";
+
+export const revalidate = 3600;
+
+async function fetchChangelog(): Promise<string> {
+  const res = await fetch(CHANGELOG_RAW_URL, { next: { revalidate } });
+  if (!res.ok) {
+    throw new Error(`Failed to fetch changelog: ${res.status}`);
+  }
+  return await res.text();
+}
+
+export default async function ChangelogPage() {
+  const changelog = await fetchChangelog();
+
   return (
     <div className="site-shell">
       <TopNav />
       <main className="container section">
         <h1 style={{ maxWidth: "20ch" }}>Product changelog</h1>
         <p className="hero-copy" style={{ marginTop: "1rem" }}>
-          Highlights from the latest release cycle for CursorToys workflows and platform support.
+          Automatically sourced from the CursorToys extension repository.
         </p>
 
         <section className="panel" style={{ marginTop: "2rem" }}>
-          <p className="eyebrow" style={{ marginBottom: "0.9rem" }}>v1.13.0 snapshot</p>
-          <ul className="list">
-            <li>Expanded sharing support across skills, folder bundles, and project-level exports.</li>
-            <li>HTTP request tooling with assertions and environment-aware execution paths.</li>
-            <li>Extended tree views for commands, prompts, hooks, plans, notepads, and skills.</li>
-            <li>AI-assisted text and workflow enhancements for prompt and chat operations.</li>
-          </ul>
+          <div className="markdown-body">
+            <ReactMarkdown>{changelog}</ReactMarkdown>
+          </div>
         </section>
 
         <div className="hero-actions" style={{ marginTop: "1.6rem" }}>

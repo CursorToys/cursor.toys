@@ -84,15 +84,15 @@ export default function Home() {
             </Link>
             <a
               className="button button-secondary"
-              href="https://marketplace.visualstudio.com/items?itemName=Godrix.cursor-toys"
+              href="https://open-vsx.org/extension/godrix/cursor-toys"
               target="_blank"
               rel="noreferrer"
             >
-              Install from VS Code Marketplace
+              Install from Open VSX
             </a>
           </div>
           <p className="muted" style={{ marginTop: "1rem" }}>
-            Open VSX is also supported for Cursor and compatible editors.
+            Prefer a file install? Use a release VSIX from GitHub.
           </p>
         </section>
       </main>
